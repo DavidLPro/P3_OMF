@@ -164,42 +164,12 @@ header {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   border-radius: 1rem;
   height: 17rem;
-  /* Boucle For pour ajouter d'autres menus automatiquement avec les images en utilsant la notation menu-n(image)*/
 }
 .card__img {
-  height: 65%;
-  background-size: cover;
+  height: 11rem;
+  width: 100%;
+  object-fit: cover;
   border-radius: 1.5rem 1.5rem 0 0;
-}
-.card__img-1 {
-  background-image: url("../../images/menu-1.jpg");
-}
-.card__img-2 {
-  background-image: url("../../images/menu-2.jpg");
-}
-.card__img-3 {
-  background-image: url("../../images/menu-3.jpg");
-}
-.card__img-4 {
-  background-image: url("../../images/menu-4.jpg");
-}
-.card__img-5 {
-  background-image: url("../../images/menu-5.jpg");
-}
-.card__img-6 {
-  background-image: url("../../images/menu-6.jpg");
-}
-.card__img-7 {
-  background-image: url("../../images/menu-7.jpg");
-}
-.card__img-8 {
-  background-image: url("../../images/menu-8.jpg");
-}
-.card__img-9 {
-  background-image: url("../../images/menu-9.jpg");
-}
-.card__img-10 {
-  background-image: url("../../images/menu-10.jpg");
 }
 .card__description {
   position: relative;
@@ -269,7 +239,7 @@ footer a:hover {
 }
 
 /*********** Image d'acceuil ************/
-img {
+.img_resto {
   width: 100%;
   height: 47vh;
   object-fit: cover;

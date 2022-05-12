@@ -56,16 +56,10 @@
     height: 17rem;
 
     &__img {
-        height: 65%;
-        background-size: cover;
+        height: 11rem;
+        width: 100%;
+        object-fit: cover;
         border-radius: 1.5rem 1.5rem 0 0;
-    }
-
-    /* Boucle For pour ajouter d'autres menus automatiquement avec les images en utilsant la notation menu-n(image)*/
-    @for $i from 1 through 10 {
-        &__img-#{$i} {
-            background-image: url("../../images/menu-#{$i}.jpg")
-        }
     }
 
     &__description {
