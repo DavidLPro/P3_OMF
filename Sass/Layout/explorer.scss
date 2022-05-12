@@ -1,0 +1,33 @@
+@import "../Themes/colors.scss";
+@import "../Utils/box-shadow.scss";
+@import "../Components/btn-gradient.scss";
+@import "../Components/btn-layout.scss";
+@import "../Utils/scale.scss";
+
+
+
+/************************************************
+***********************EXPLORER ******************
+**************************************************/
+.explorer {
+    text-align: center;
+
+    & h2 {
+        margin-top: 2rem;
+        font-size: 2rem;
+    }
+
+    & p {
+        font-size: 1rem;
+    }
+
+    & button {
+        @include btn-gradient;
+        @include box-shadow;
+        @include btn-layout;
+    }
+
+    & button:hover {
+        @include scale;
+    }
+}

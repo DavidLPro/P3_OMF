@@ -1,0 +1,6 @@
+@mixin scale {
+    transform: scale(1.02);
+    transition: 300ms;
+    opacity: 0.8;
+    cursor: pointer; 
+}

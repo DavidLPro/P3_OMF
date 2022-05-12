@@ -1,0 +1,5 @@
+
+@mixin btn-gradient {
+    background-image: linear-gradient($pink,$purple);
+    cursor: pointer;
+    }

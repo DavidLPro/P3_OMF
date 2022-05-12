@@ -1,0 +1,586 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&family=Shrikhand&display=swap");
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  font-family: "Shrikhand", cursive;
+  position: relative;
+  padding: 1rem;
+  margin: 0px;
+}
+
+/************************************************
+***********************EXPLORER ******************
+**************************************************/
+.explorer {
+  text-align: center;
+}
+.explorer h2 {
+  margin-top: 2rem;
+  font-size: 2rem;
+}
+.explorer p {
+  font-size: 1rem;
+}
+.explorer button {
+  background-image: linear-gradient(#FF79DA, #9356DC);
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border: none;
+  border-radius: 2rem;
+  color: #FFFFFF;
+  font-size: 1.5rem;
+  font-weight: 200;
+  margin-top: 1rem;
+  margin-bottom: 4rem;
+  padding: 1rem 2rem;
+}
+.explorer button:hover {
+  transform: scale(1.02);
+  transition: 300ms;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+/*****************************************
+***************FILTERS********************
+******************************************/
+.location {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background-color: #F6F6F6;
+}
+.location i {
+  font-size: 2rem;
+}
+
+.filters {
+  counter-reset: steps;
+}
+.filters ol {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 0 2rem;
+}
+@media (min-width: 968px) {
+  .filters ol {
+    flex-direction: row;
+  }
+}
+.filters li {
+  border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  position: relative;
+  list-style: none;
+  background-color: #F6F6F6;
+  padding: 1.5rem;
+  flex-grow: 1;
+}
+.filters li:hover {
+  transform: scale(1.02);
+  transition: 300ms;
+  opacity: 0.8;
+  cursor: pointer;
+  background: #e4d5f6;
+}
+.filters li:hover i {
+  color: #9356DC;
+}
+.filters li i {
+  color: #808080;
+  margin-right: 1rem;
+  font-size: 1.5rem;
+}
+.filters li::before {
+  display: grid;
+  place-items: center;
+  position: absolute;
+  content: counter(steps);
+  counter-increment: steps;
+  top: 50%;
+  left: -2%;
+  transform: translateY(-50%);
+  background-color: #9356DC;
+  color: #F6F6F6;
+  border-radius: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+/************************************************** 
+*******VIGNETTE DES RESTAURANTS ***********
+***************************************************/
+/**************** Layout **************/
+.menu {
+  background-color: #F6F6F6;
+  margin-top: 4rem;
+  padding-bottom: 4rem;
+}
+.menu__card {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin: 0 1.5rem;
+  /* Position relative & absolue obatoire pour placer les elements selon les axes */
+  /* Indice Nouveau */
+  /* The ::before selector inserts something before the content of each selected element(s).*/
+}
+@media (max-width: 968px) {
+  .menu__card {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.menu__card a:hover {
+  transform: scale(1.02);
+  transition: 300ms;
+  opacity: 0.8;
+  cursor: pointer;
+}
+.menu__card .new {
+  position: relative;
+}
+.menu__card .new::before {
+  content: "Nouveau";
+  position: absolute;
+  display: grid;
+  place-items: center;
+  top: 1rem;
+  right: 1rem;
+  height: 2.5rem;
+  width: 6rem;
+  background-color: #99E2D0;
+  color: #278870;
+  font-weight: bold;
+}
+
+/******************* Vig Card ****************/
+.card {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 1rem;
+  height: 17rem;
+  /* Boucle For pour ajouter d'autres menus automatiquement avec les images en utilsant la notation menu-n(image)*/
+}
+.card__img {
+  height: 65%;
+  background-size: cover;
+  border-radius: 1.5rem 1.5rem 0 0;
+}
+.card__img-1 {
+  background-image: url("../../images/menu-1.jpg");
+}
+.card__img-2 {
+  background-image: url("../../images/menu-2.jpg");
+}
+.card__img-3 {
+  background-image: url("../../images/menu-3.jpg");
+}
+.card__img-4 {
+  background-image: url("../../images/menu-4.jpg");
+}
+.card__img-5 {
+  background-image: url("../../images/menu-5.jpg");
+}
+.card__img-6 {
+  background-image: url("../../images/menu-6.jpg");
+}
+.card__img-7 {
+  background-image: url("../../images/menu-7.jpg");
+}
+.card__img-8 {
+  background-image: url("../../images/menu-8.jpg");
+}
+.card__img-9 {
+  background-image: url("../../images/menu-9.jpg");
+}
+.card__img-10 {
+  background-image: url("../../images/menu-10.jpg");
+}
+.card__description {
+  position: relative;
+  border-radius: 0 0 1rem 1rem;
+  background-color: #FFFFFF;
+  /*********** Heart Icone ***********/
+  /* Utilisation de deux icones ( vide & rempli) changement sur un hover */
+}
+.card__description p,
+.card__description h3 {
+  padding-left: 1rem;
+}
+.card__description h3 {
+  padding-top: 1rem;
+}
+.card__description p {
+  padding-bottom: 1rem;
+}
+.card__description i {
+  position: absolute;
+  top: 50%;
+  right: 2%;
+  transform: translateY(-50%);
+  font-size: 3rem;
+}
+.card__description .fa-solid {
+  background-image: linear-gradient(#FF79DA, #9356DC);
+  cursor: pointer;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  opacity: 0;
+  transition: 500ms;
+}
+.card__description .fa-solid:hover {
+  opacity: 1;
+}
+.card__description .fa-regular:hover {
+  opacity: 0;
+}
+
+footer {
+  background-color: #353535;
+  padding: 1rem;
+  color: #FFFFFF;
+}
+footer h2 {
+  font-family: "Shrikhand", "sans-serif";
+}
+footer p {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+footer p i {
+  width: 10px;
+  height: 10px;
+}
+footer a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/*************** Arrow back ***************/
+.fa-solid.fa-arrow-left {
+  font-size: 2rem;
+}
+
+/*********** Image d'acceuil ************/
+img {
+  width: 100%;
+  height: 47vh;
+  object-fit: cover;
+  object-position: top;
+}
+
+/************************************************************
+********************** Vignette Card Contenu ***************
+***********************************************************/
+/* Tittle & Heart Fill up*/
+.vig__tittle {
+  position: relative;
+  background-color: #F6F6F6;
+  margin-top: -5rem;
+  border-radius: 1.5rem 1.5rem 0 0;
+}
+.vig__tittle h2 {
+  font-family: "Shrikhand";
+}
+.vig__tittle i {
+  font-size: 3rem;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 1rem;
+}
+.vig__tittle .fa-solid {
+  background-image: linear-gradient(#FF79DA, #9356DC);
+  cursor: pointer;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  opacity: 0;
+  transition: 500ms;
+}
+.vig__tittle .fa-solid:hover {
+  opacity: 1;
+}
+.vig__tittle .fa-regular:hover {
+  color: transparent;
+  opacity: 0;
+}
+
+/* Vig Layout */
+.vig__sect {
+  padding: 1.5rem 0;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  background-color: #F6F6F6;
+}
+@media (min-width: 968px) {
+  .vig__sect {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.vig__type {
+  padding: 0 1rem;
+  gap: 2rem;
+  overflow: hidden;
+}
+.vig__type h3 {
+  margin: 0 1rem;
+  opacity: 1;
+  font-weight: 100;
+  position: relative;
+}
+.vig__type h3:before {
+  content: ".";
+  position: absolute;
+  border-bottom: 5px solid #99E2D0;
+  width: 45px;
+}
+.vig__items {
+  background-color: #FFFFFF;
+  border-radius: 1.5rem;
+  padding: 1.5rem 2rem;
+  margin: 1.5rem 0;
+}
+.vig__description h4,
+.vig__description p {
+  margin: 0.5rem;
+  font-size: large;
+}
+.vig .prix {
+  font-weight: bold;
+  font-size: large;
+}
+
+/* Vignette card & icone Animation*/
+.vig__card {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: vignette_anime 1550ms;
+  animation-timing-function: cubic-bezier(0.17, 0.67, 0.83, 0.67);
+  transform: scale(0);
+  animation-fill-mode: both;
+  border-radius: 1rem;
+  cursor: pointer;
+  height: 70px;
+  width: 100%;
+  padding-left: 0.5rem;
+  background-color: #FFFFFF;
+  margin: 0.8rem 0;
+}
+.vig__card:hover :nth-child(3) {
+  opacity: 1;
+  margin-right: 0px;
+}
+.vig__card__def {
+  width: 90%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.vig__card__def h4, .vig__card__def p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.vig__card__def__prix {
+  margin-left: 1rem;
+}
+.vig__card__check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70px;
+  width: 6rem;
+  opacity: 0;
+  background-color: #99E2D0;
+  margin-left: 1.5rem;
+  margin-right: -5.5rem;
+  border-radius: 0 1rem 1rem 0;
+  transition: all 0.9s ease-in-out;
+}
+.vig__card:hover i {
+  transform: rotate(360deg);
+  opacity: 1;
+}
+
+/* Rotation emote check */
+.fa-check-circle {
+  transform: rotate(0deg);
+  transition: all 0.9s ease-in-out;
+  font-size: 1.5rem;
+  color: #FFFFFF;
+}
+
+@keyframes vignette_anime {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.delay1 {
+  animation-delay: 200ms;
+}
+
+.delay2 {
+  animation-delay: 400ms;
+}
+
+.delay3 {
+  animation-delay: 600ms;
+}
+
+.delay4 {
+  animation-delay: 800ms;
+}
+
+/*********************************************
+**************** Bouton commander ***********
+**********************************************/
+.commander {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #F6F6F6;
+}
+.commander button {
+  background-image: linear-gradient(#FF79DA, #9356DC);
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border: none;
+  border-radius: 2rem;
+  color: #FFFFFF;
+  font-size: 1.5rem;
+  font-weight: 200;
+  margin-top: 1rem;
+  margin-bottom: 4rem;
+  padding: 1rem 2rem;
+}
+.commander button:hover {
+  transform: scale(1.02);
+  transition: 300ms;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1 {
+  margin: auto;
+}
+
+h2 {
+  margin: 0;
+  padding: 2rem 1rem;
+  font-size: 1.8rem;
+}
+
+h3 {
+  font-size: x-large;
+  margin: 0;
+}
+h3 p {
+  margin: 0;
+}
+
+@media (min-width: 1280px) {
+  main {
+    max-width: 1280px;
+    margin: auto;
+    width: 100%;
+  }
+}
+
+.hide-page {
+  animation: timer_load 3s linear;
+}
+
+/* Rotation Loader */
+/* La propriété Visibility: hidden/visible vas permet que la class sera caché/visible
+   quand l'animation est fini */
+.loader {
+  display: inline-block;
+  visibility: hidden;
+  position: absolute;
+  animation: rot_load 3s ease-in-out;
+  background-image: linear-gradient(#FF79DA, #9356DC);
+  cursor: pointer;
+  top: 50%;
+  left: 50%;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  border-top: 5px dashed #99E2D0;
+  border-left: 5px dotted #99E2D0;
+  border-bottom: 5px solid #99E2D0;
+  border-right: 5px solid #99E2D0;
+}
+@media (max-width: 968px) {
+  .loader {
+    left: 38%;
+  }
+}
+.loader img {
+  position: absolute;
+  width: auto;
+  top: 50%;
+  left: 50%;
+  color: #9356DC;
+  font-size: 30px;
+  height: 20px;
+  /* Centrer logo par rapport au loader  en rotation*/
+  transform: translate(-50%, -50%);
+}
+
+@keyframes rot_load {
+  0% {
+    transform: rotate(0deg);
+    visibility: visible;
+  }
+  100% {
+    transform: rotate(1080deg);
+  }
+}
+@keyframes timer_load {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  60% {
+    transform: scale(0.6);
+  }
+  85% {
+    transform: scale(0.8);
+  }
+  99% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,14 @@
+@import "../Themes/colors.scss";
+@import "../Utils/flex-center.scss";
+@import "../Utils/box-shadow.scss";
+
+header{
+    @include flex-center;
+    @include box-shadow;
+    font-family: 'Shrikhand', cursive;
+    position: relative;
+    padding: 1rem;
+    margin: 0px;
+    
+    
+}

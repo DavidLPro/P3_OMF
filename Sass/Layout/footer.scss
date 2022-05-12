@@ -1,0 +1,24 @@
+
+footer{
+    background-color: $greyblack;
+    
+    padding: 1rem;
+    color:$white;
+    & h2{
+        font-family: 'Shrikhand' ,"sans-serif";
+
+    }
+    & p{
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        & i{
+            width: 10px;
+            height: 10px;
+        }
+    }
+    & a:hover{
+        text-decoration: underline;
+        cursor: pointer;
+    }
+}

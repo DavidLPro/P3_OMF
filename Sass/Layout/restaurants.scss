@@ -1,0 +1,222 @@
+@import "../Themes/colors.scss";
+@import "../Components/btn-gradient.scss";
+@import "../Components/btn-layout.scss";
+@import "../Utils/box-shadow.scss";
+@import "../Utils/over-txt.scss";
+@import "../Utils/scale.scss";
+@import "../Utils/flex-center.scss";
+@import "../Utils/anim-vig.scss";
+@import "../Utils/border-rad_vig.scss";
+
+/*************** Arrow back ***************/
+.fa-solid.fa-arrow-left{
+  font-size: 2rem;
+}
+
+/*********** Image d'acceuil ************/
+img{
+    width: 100%;
+    height:47vh;
+    object-fit: cover;
+    object-position: top;
+}
+
+/************************************************************
+********************** Vignette Card Contenu ***************
+***********************************************************/
+
+/* Tittle & Heart Fill up*/
+.vig__tittle {
+    position: relative;
+    background-color: $light-grey;
+    margin-top: -5rem;
+    border-radius: 1.5rem 1.5rem 0 0;
+    h2{
+        font-family: "Shrikhand";
+    }
+    i{
+        font-size:3rem;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right:1rem;
+    }
+    .fa-solid{
+      @include btn-gradient;
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;        
+      opacity: 0;
+        transition: 500ms;
+        &:hover {
+            opacity: 1;
+        }
+        
+    }
+    .fa-regular{
+        &:hover{
+            color: transparent;
+            opacity: 0;
+        }
+    }
+}
+
+/* Vig Layout */
+.vig{
+    &__sect{
+        padding: 1.5rem 0;
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        background-color: $light-grey;
+        @media (min-width:968px){
+          grid-template-columns: repeat(3,1fr);
+        }
+    }
+    &__type{
+        padding: 0 1rem;
+        gap:2rem;
+        overflow: hidden;
+        h3{
+            margin: 0 1rem;
+            opacity: 1;
+            font-weight: 100;
+            position: relative;
+            &:before{
+              content:".";
+              position:absolute;
+              border-bottom:  5px solid $aqua;
+              width: 45px;
+              }
+            }            
+        }
+    &__items{
+        background-color: $white;
+        border-radius: 1.5rem ;
+        padding: 1.5rem 2rem;
+        margin: 1.5rem 0;
+            
+        }
+
+    &__description {
+    
+      h4,
+      p {
+        margin: 0.5rem;
+        font-size: large;
+      }
+    }
+    
+    .prix {
+      font-weight: bold;
+      font-size: large;
+    }
+}
+
+/* Vignette card & icone Animation*/
+
+.vig__card {
+  @include over;
+  @include box-shadow;
+  @include flex-center;
+  @include anim-vig;
+  @include border-rad_vig;
+  cursor: pointer;
+  height: 70px;
+  width: 100%;
+  padding-left: 0.5rem;
+  background-color: $white;
+  margin: 0.8rem 0;
+
+  &:hover :nth-child(3) {
+    opacity: 1;
+    margin-right: 0px;
+  }
+
+  &__def {
+    width: 90%;
+    @include over;
+    h4, p {
+      @include over;
+    }
+    &__prix {
+      margin-left: 1rem;
+    }
+  }
+
+  &__check {
+    @include flex-center;
+    height: 70px;
+    width: 6rem;
+    opacity: 0;
+    background-color: $aqua;
+    margin-left: 1.5rem;
+    margin-right: -5.5rem;
+    border-radius: 0 1rem 1rem 0;
+    transition: all 0.9s ease-in-out;
+  }
+
+  &:hover i {
+    transform: rotate(360deg);
+    opacity: 1;
+  }
+
+}
+
+/* Rotation emote check */
+.fa-check-circle {
+  transform: rotate(0deg) ;
+  transition: all 0.9s ease-in-out;
+  font-size: 1.5rem;
+  color: $white;
+}
+
+  @keyframes vignette_anime {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  .delay1 {
+    animation-delay: 200ms;
+  }
+  
+  .delay2 {
+    animation-delay: 400ms;
+  }
+  
+  .delay3 {
+    animation-delay: 600ms;
+  }
+  
+  .delay4 {
+    animation-delay: 800ms;
+  }
+
+/*********************************************
+**************** Bouton commander ***********
+**********************************************/ 
+.commander{
+  @include flex-center;
+  background-color: $light-grey;
+    & button{
+        @include btn-gradient;
+        @include box-shadow;
+        @include btn-layout;
+    }
+    & button:hover{
+        @include scale;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+

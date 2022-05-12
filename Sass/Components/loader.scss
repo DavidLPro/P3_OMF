@@ -1,0 +1,79 @@
+@import "../Components/btn-gradient.scss";
+
+.hide-page{
+    animation: timer_load 3s linear;
+ }
+ 
+ 
+ /* Rotation Loader */
+ /* La propriété Visibility: hidden/visible vas permet que la class sera caché/visible
+    quand l'animation est fini */
+ .loader {
+    display: inline-block;
+    visibility: hidden;
+    position: absolute;
+    animation: rot_load 3s ease-in-out;
+    @include btn-gradient;
+    top: 50%;
+    left: 50%;
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    border-top: 5px dashed $aqua;
+    border-left: 5px dotted $aqua;
+    border-bottom: 5px solid $aqua;
+    border-right: 5px solid $aqua;
+    @media (max-width: 968px) {
+       left: 38%;
+    }
+ 
+    & img {
+       position: absolute;
+       width: auto;
+       top: 50%;
+       left: 50%;
+       color: $purple;
+       font-size: 30px;
+       height: 20px;
+       /* Centrer logo par rapport au loader  en rotation*/
+       transform: translate(-50%, -50%);
+    }
+ }
+ 
+ @keyframes rot_load {
+    0% {
+       transform: rotate(0deg);
+       visibility: visible;
+    }
+ 
+    100% {
+       transform: rotate(1080deg);
+ 
+    }
+ }
+ 
+ @keyframes timer_load {
+    0% {
+       opacity: 0;
+       transform: scale(0);
+    }
+ 
+    60% {
+       transform: scale(0.6);
+    }
+ 
+    85% {
+       transform: scale(0.8);
+    }
+ 
+    99% {
+ 
+       transform: scale(0.9);
+ 
+    }
+ 
+    100% {
+       transform: scale(1);
+       opacity: 0
+    }
+ }

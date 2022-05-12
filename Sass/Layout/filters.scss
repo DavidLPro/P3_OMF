@@ -1,0 +1,76 @@
+@import "../Themes/colors.scss";
+@import "../Utils/box-shadow.scss";
+@import "../Utils/border-rad_vig.scss";
+@import "../Utils/flex-center.scss";
+
+/*****************************************
+***************FILTERS********************
+******************************************/
+
+
+.location {
+    @include flex-center;
+    gap: 1rem;
+    background-color: $light-grey;
+
+    & i {
+        font-size: 2rem;
+    }
+}
+
+.filters {
+    counter-reset:steps ;
+    & ol {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        padding: 0 2rem;
+        @media (min-width :968px) {
+            flex-direction: row;
+        }
+
+    }
+
+    & li {
+        @include border-rad_vig;
+        @include box-shadow;
+        position: relative;
+        list-style: none;
+        background-color: $light-grey;
+        padding: 1.5rem;
+        flex-grow: 1;
+
+        &:hover {
+            @include scale;
+            background: lighten($purple, $amount: 30%);
+
+            & i {
+                color: $purple;
+            }
+        }
+
+        & i {
+            color: $grey;
+            margin-right: 1rem;
+            font-size: 1.5rem;
+        }
+
+        &::before {
+            display: grid;
+            place-items: center;
+            position: absolute;
+            content: counter(steps);
+            counter-increment: steps;
+            top: 50%;
+            left: -2%;
+            transform: translateY(-50%);
+            background-color: $purple;
+            color: $light-grey;
+            border-radius: 50%;
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+    }
+
+
+}

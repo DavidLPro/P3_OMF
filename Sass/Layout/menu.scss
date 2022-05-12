@@ -1,0 +1,117 @@
+@import "../Themes/colors.scss";
+@import "../Utils/box-shadow.scss";
+@import "../Utils/scale.scss";
+@import "../Components/btn-gradient.scss";
+
+
+/************************************************** 
+*******VIGNETTE DES RESTAURANTS ***********
+***************************************************/
+
+/**************** Layout **************/
+.menu {
+    background-color: $light-grey;
+    margin-top: 4rem;
+    padding-bottom: 4rem;
+
+    &__card {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        margin: 0 1.5rem;
+
+        @media (max-width:968px) {
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+        a:hover {
+            @include scale;
+        }
+
+        /* Position relative & absolue obatoire pour placer les elements selon les axes */
+        .new {
+            position: relative;
+        }
+        /* Indice Nouveau */
+        /* The ::before selector inserts something before the content of each selected element(s).*/
+        .new::before {
+            content: "Nouveau";
+            position: absolute;
+            display: grid;
+            place-items: center;
+            top: 1rem;
+            right: 1rem;
+            height: 2.5rem;
+            width: 6rem;
+            background-color: $aqua;
+            color: darken($aqua, $amount: 40);
+            font-weight: bold;
+        }
+    }
+}
+/******************* Vig Card ****************/
+.card {
+    @include box-shadow;
+    @include border-rad_vig;
+    height: 17rem;
+
+    &__img {
+        height: 65%;
+        background-size: cover;
+        border-radius: 1.5rem 1.5rem 0 0;
+    }
+
+    /* Boucle For pour ajouter d'autres menus automatiquement avec les images en utilsant la notation menu-n(image)*/
+    @for $i from 1 through 10 {
+        &__img-#{$i} {
+            background-image: url("../../images/menu-#{$i}.jpg")
+        }
+    }
+
+    &__description {
+        position: relative;
+        border-radius: 0 0 1rem 1rem;
+        background-color: $white;
+
+        & p,
+        h3 {
+            padding-left: 1rem;
+        }
+
+        h3 {
+            padding-top: 1rem;
+        }
+
+        p {
+            padding-bottom: 1rem;
+        }
+/*********** Heart Icone ***********/
+        /* Utilisation de deux icones ( vide & rempli) changement sur un hover */
+        i {
+            position: absolute;
+            top: 50%;
+            right: 2%;
+            transform: translateY(-50%);
+            font-size: 3rem;
+        }
+
+        .fa-solid {
+            @include btn-gradient;
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            opacity: 0;
+            transition: 500ms;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+
+        .fa-regular {
+            &:hover {
+                opacity: 0;
+            }
+        }
+    }
+}
