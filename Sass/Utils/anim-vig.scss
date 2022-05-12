@@ -1,6 +1,7 @@
 @mixin anim-vig {
-    animation: vignette_anime 1550ms;
-    animation-timing-function: cubic-bezier(.17,.67,.83,.67);
+    animation: vignette_anime 2500ms;
+    animation-timing-function: cubic-bezier(.78,.82,.34,.94);
     transform: scale(0);
+    transform-origin: bottom;
     animation-fill-mode: both;
 }
