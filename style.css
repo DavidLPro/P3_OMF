@@ -169,7 +169,7 @@ header {
   height: 11rem;
   width: 100%;
   object-fit: cover;
-  border-radius: 1.5rem 1.5rem 0 0;
+  border-radius: 1rem 1rem 0 0;
 }
 .card__description {
   position: relative;
@@ -497,12 +497,12 @@ h3 p {
 
 /* Rotation Loader */
 /* La propriété Visibility: hidden/visible vas permet que la class sera caché/visible
-   quand l'animation est fini */
+    quand l'animation est fini */
 .loader {
   display: inline-block;
   visibility: hidden;
   position: absolute;
-  animation: rot_load 3s ease-in-out;
+  animation: rot_load 3s ease-out;
   background-image: linear-gradient(#FF79DA, #9356DC);
   cursor: pointer;
   top: 50%;
