@@ -218,9 +218,9 @@ footer {
 }
 @media (min-width: 1280px) {
   footer {
-    max-width: 1980px;
-    margin: auto;
-    width: 100%;
+    max-width: 100%; /*100% pour prendre tout l'espace*/
+    /* margin: auto;
+    width: 100%; */
   }
 }
 footer h2 {
